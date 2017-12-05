@@ -1,0 +1,88 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Frequent Sign In Form A Responsive Widget Template :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Frequent Sign In Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/login/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="/login/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<!-- //css files -->
+<!-- web-fonts -->
+<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet"> -->
+<!-- //web-fonts -->
+</head>
+<body>
+<div class="banner-overlay-agileinfo">
+		<!--header-->
+		<div class="header-w3l">
+			<h1>登录</h1>
+		</div>
+		<!--//header-->
+		<!--main-->
+		<div class="main-w3layouts-agileinfo">
+	           <!--form-stars-here-->
+						<div class="wthree-form">
+							<!-- <h2>Sign in to your account</h2> -->
+							<%= form_tag '/users/logins',method: :post do %>
+								<div class="form-sub-w3">
+									<!-- <input type="text" name="Username" placeholder="Username " required="" /> -->
+									<%= text_field_tag :email ,"",:placeholder=>"Email ",:required=>'required',:class=>"input_user5" %>
+								<div class="icon-w3">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								</div>
+								<div class="form-sub-w3">
+									<!-- <input type="password" name="Password" placeholder="Password" required="" /> -->
+									<%= password_field_tag :password ,"",:placeholder=>"Password ",:required=>'required',:class=>"input_user6" %>
+								<div class="icon-w3">
+									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+								</div>
+								</div>
+								<p class="forgot-w3ls">注册？<a class href="/users/new"> 点击这里</a></p>
+								<p class="forgot-w3ls1"><a class href="#">忘记密码</a></p>
+								<div class="clear"></div>
+								<div class="submit-agileits">
+									<input type="submit" value="登录">
+								</div>
+							<%end%>
+
+						</div>
+				<script type="text/javascript">
+	$('.input_user5').blur(function (argument) {
+		     var str= $('.input_user5').val().length
+             if (str<6) {
+               
+             	alert("最短为六位数")}
+	})
+	$('.input_user6').blur(function (argument) {
+		     var str= $('.input_user6').val().length
+             if (str<6) {alert("最短为六位数")}
+	})
+
+ 
+
+
+</script>
+
+		</div>
+		<!--//main-->
+		<!--footer-->
+		<div class="footer">
+		
+		</div>
+		<!--//footer-->
+	</div>
+</body>
+</html>

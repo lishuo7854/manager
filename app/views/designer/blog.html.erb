@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Chivalric</title>
+
+
+<link rel="stylesheet" href="/index1949/css/bootstrap.min.css">
+<link rel="stylesheet" href="/index1949/css/font-awesome.min.css">
+<link rel="stylesheet" href="/index1949/vendors/owl-carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="/index1949/vendors/magnific-popup/magnific-popup.css">
+<link rel="stylesheet" href="/index1949/vendors/flexslider/flexslider.css">
+
+<link href="/index1949/css/style.css" rel="stylesheet">
+<link href="/index1949/css/theme/green.css" rel="stylesheet">
+
+
+</head>
+<body class="home">
+
+<%=render 'header'%>
+
+<section class="row content-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 single-post-contents" >
+                <article class="single-post-content row m0 post" >
+                    <header class="row">                        
+                        <h5 class="post-meta">
+                            <a href="#" class="date"><%= @article.postedtime %></a>
+                            <span class="post-author"><i>by</i><a href="#"><%= @article.inputer %></a></span>
+                        </h5>
+                        <h2 class="post-title"><%= @article.title %></h2>
+                        <div class="row">
+                            <h5 class="taxonomy pull-left"><i>in</i> <a href="#"><%= @article.category %></a></h5>
+                            <div class="response-count pull-right"><img src="/index1949/images/comment-icon-gray.png" alt=""><%= @Articlecomment.length %></div>
+                        </div>
+                    </header>
+                    <div class="featured-content row m0">
+                        <a href="#"><img src="/uploads/<%=@article.image_path%>" alt=""></a>
+                    </div>
+
+
+                    <div class="post-content row" style="overflow: hidden;">
+                   
+                  
+                    <%= sanitize  @article.details  %>
+
+
+
+
+                        <br>
+                        <!-- 16:9 aspect ratio -->
+                     
+                        <br>
+                        
+                        <!-- Place somewhere in the <body> of your page -->
+                        <div class="thumbCarousel row m0">
+                            <div id="slider" class="flexslider">
+                                <ul class="slides">
+                                    <li><img src="/index1949/images/posts/gallery/1.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/2.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/3.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/4.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/1.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/2.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/3.jpg" alt=""></li>
+                                </ul>
+                            </div>
+                            <div id="carousel" class="flexslider">
+                                <ul class="slides">
+                                    <li><img src="/index1949/images/posts/gallery/s1.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s2.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s3.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s4.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s1.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s2.jpg" alt=""></li>
+                                    <li><img src="/index1949/images/posts/gallery/s3.jpg" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                       <!--  <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
+                    </div>
+                    <div class="row m0 tags">
+                        <a href="#" class="tag">music</a>
+                        <a href="#" class="tag">tegs</a>
+                        <a href="#" class="tag">tegs hover</a>
+                    </div>
+                    
+                    <ul class="pager">
+                        <li>
+                            <h4>上一页</h4>
+                            <h2 class="post-title"><a href="/designer/blog?id=<%=@article0.id%>">  <%=@article0.title%> </a></h2>
+                            <h5 class="taxonomy pull-left"><i>in</i> <a href="#"> <%=@article0.category%> </a></h5>
+                        </li>
+                        <li>
+                            <h4>下一页</h4>
+                            <h2 class="post-title"><a href="/designer/blog?id=<%=@article1.id%>"><%=@article1.title%> </a></h2>
+                            <h5 class="taxonomy pull-left"><i>in</i> <a href="#"> <%=@article1.category%> </a></h5>
+                        </li>
+                    </ul>
+                    
+                    <div class="row m0 comments">
+                        <h5 class="response-count">
+                           <a href="#comment-form" class="btn btn-primary pull-right">
+                                <span>回复一下</span></a></h5>
+                        <!--Comments-->
+                        <div class="media comment">
+                            <!-- <div class="media-left">
+                                <a href="#"><img src="/index1949/images/posts/c1.jpg" alt="" class="img-circle"></a>
+                            </div> -->
+
+                       <!--      
+                            <div class="media-body">
+                                <h4><a href="#">Mark Sanders</a></h4>
+                                <h5><a href="#" class="date">feb 17, 2016 at 3:30pm</a> | <a href="#" class="reply-link">reply</a></h5>
+                                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>                                
+                                
+
+
+
+
+
+
+                                <div class="media comment reply">
+                                    <div class="media-left">
+                                        <a href="#"><img src="/index1949/images/posts/c2.jpg" alt="" class="img-circle"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4><a href="#">Mark Sanders</a></h4>
+                                        <h5><a href="#" class="date">feb 17, 2016 at 3:30pm</a> | <a href="#" class="reply-link">reply</a></h5>
+                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                   
+                                    </div>
+                                </div>
+                            </div> -->
+                                                
+                        <!--Comments-->
+
+
+                    <% @Articlecomment.each do |e| %>
+                        <div class="media comment">
+                            <div class="media-left">
+                                <a href="#"><img src="/uploads/5d11929c9154c42cb24fd918c460b5ed.jpg" alt="" class="img-circle"></a>
+                            </div>
+                            <div class="media-body">
+                                <%if e.user_id==1000000000%>
+                                <h4><a href="#">陌生人</a></h4>
+                                <%else%>
+                                <h4><a href="#"><%=User.find_by(id: e['user_id']).email%></a></h4>
+                                <%end%>
+                                <h5><a href="#" class="date"><%= e['comment_time']%></a> </h5>
+                                <p><%= e['comment_text']%></p>
+                            </div>
+                        </div>
+                   <%end%>
+
+
+
+                    </div>
+                    </div>
+                 
+                        <%= form_tag article_comment_create_path(id:@article.id),method: :post do%>
+                        <!-- <h5 class="form-title"></h5> -->
+                    
+                    
+                        <div class="form-group col-sm-12">
+                            <!-- <h4 for="message">回复</h4> -->
+                            <textarea name="message" id="message" class="form-control" placeholder="" maxlength="300"></textarea>
+                        </div>
+                        <div class="col-sm-12" style="margin-bottom: 50px;">
+                            <button type="submit" class="btn-primary"><span>发送</span></button>
+                            
+                        </div>
+                    <%end%>
+                </article>
+            </div>
+            <div class="col-md-3 sidebar">               
+                <!--Author Widget-->
+             
+                <!--Twitter Widget-->
+                <aside class="row m0 widget widget-twitter" style="margin-top: 15px;">
+                    <div class="widget-twitter-inner">
+                        <h5 class="widget-meta"><i class="fa fa-twitter"></i>Twitter feed <a href="http://twitter.com/chivalricblog"></a></h5>
+                        <div class="row tweet-texts">
+                            <p><a href=""></a> <a href=""></a></p>
+                        </div>
+                        <div class="row timepast"></div>
+                    </div>
+                </aside>
+                <!--Instagram Widget-->
+                <aside class="row m0 widget widget-instagram">
+                    <div class="widget-instagram-inner">
+                        <h5 class="widget-meta"><i class="fa fa-twitter"></i>instagram feed <a href="http://twitter.com/chivalricblog"></a></h5>
+                        <div id="instafeed"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<%=render "footer"%>
+
+<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
+<script src="/index1949/js/jquery-2.2.0.min.js"></script>
+<script src="/index1949/js/bootstrap.min.js"></script>
+<script src="/index1949/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/index1949/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/index1949/vendors/instafeed/instafeed.min.js"></script>
+<script src="/index1949/vendors/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/index1949/vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="/index1949/vendors/flexslider/jquery.flexslider-min.js"></script>
+<script src="/index1949/js/theme.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

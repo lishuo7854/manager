@@ -1,0 +1,110 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Frequent Sign In Form A Responsive Widget Template :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Frequent Sign In Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/login/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="/login/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<!-- //css files -->
+<!-- web-fonts -->
+<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet"> -->
+<!-- //web-fonts -->
+</head>
+<body>
+<div class="banner-overlay-agileinfo">
+		<!--header-->
+		<div class="header-w3l">
+			<h1>注册</h1>
+		</div>
+		<!--//header-->
+		<!--main-->
+		<% unless @user.errors.empty? %>
+		<script type="text/javascript">
+			 alert(  "  <% @user.errors.messages.values.flatten.each do |error| %>\
+        <%= error %>\
+      <% end -%> "      )
+
+
+
+		</script>
+ 
+<% end -%>
+		<div class="main-w3layouts-agileinfo">
+	           <!--form-stars-here-->
+						<div class="wthree-form">
+							<!-- <h2>Sign in to your account</h2> -->
+							<%= form_for :user,{url: users_path,method: :post} do |f| %>
+								<div class="form-sub-w3">
+									<!-- <input type="text" name="Username"  required="" /> -->
+									   <%= f.text_field :email,:placeholder=>"Username ",:required=>'required',:maxlength=>"16",:class=>"input_user1" %>
+								<div class="icon-w3">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								</div>
+								<div class="form-sub-w3">
+									   <%= f.password_field :password ,:placeholder=>"password ",:required=>'required',:class=>"input_user2"%>
+								<div class="icon-w3">
+									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+								</div>
+								</div>
+								<div class="form-sub-w3">
+									    <%= f.password_field :password_conformation,:placeholder=>"password_conformation ",:required=>'required',:class=>"input_user3" %>
+								<div class="icon-w3">
+									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+								</div>
+								</div>
+								<p class="forgot-w3ls"><a class href="/users/index"> 已有账号点击登录</a></p>
+								<!-- <p class="forgot-w3ls1">New User?<a class href="#">  Register here</a></p> -->
+								<div class="clear"></div>
+								<div class="submit-agileits">
+									<!-- <input type="submit" value="Sign in"> -->
+									 <%= f.submit :注册,:id=>'input_user' %>
+								</div>
+							<%end%>
+
+						</div>
+				
+<script type="text/javascript">
+	$('.input_user1').blur(function (argument) {
+		     var str= $('.input_user1').val().length
+             if (str<6) {
+               
+             	alert("最短为六位数")}
+	})
+	$('.input_user2').blur(function (argument) {
+		     var str= $('.input_user2').val().length
+             if (str<6) {alert("最短为六位数")}
+	})
+	$('.input_user3').blur(function (argument) {
+		     var str= $('.input_user3').val().length
+             if (str<6) {alert("最短为六位数")}
+	})
+ 
+
+
+</script>
+
+
+		</div>
+		<!--//main-->
+		<!--footer-->
+		<div class="footer">
+			<p>&copy;  <a href="http://w3layouts.com"></a></p>
+		</div>
+		<!--//footer-->
+	</div>
+</body>
+</html>

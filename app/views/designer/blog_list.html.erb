@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Chivalric</title>
+
+
+<link rel="stylesheet" href="/index1949/css/bootstrap.min.css">
+<link rel="stylesheet" href="/index1949/css/font-awesome.min.css">
+<link rel="stylesheet" href="/index1949/vendors/owl-carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="/index1949/vendors/magnific-popup/magnific-popup.css">
+<link rel="stylesheet" href="/index1949/vendors/flexslider/flexslider.css">
+
+<link href="/index1949/css/style.css" rel="stylesheet">
+<link href="/index1949/css/theme/green.css" rel="stylesheet">
+
+
+</head>
+<body class="home">
+
+<%=render 'header'%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <link href="/blog_lists/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/blog_lists/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/blog_lists/css/animate.min.css" rel="stylesheet"> 
+    <link href="/blog_lists/css/main.css" rel="stylesheet">
+    
+
+
+
+  
+
+    <section id="blog" class="padding-top" style="background-color: #fff; width: 95%;margin: 0 auto; margin-bottom: 75px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+                        <div class="sidebar-item  recent">
+                            <!-- <h3>Comments</h3> -->
+                            <% @article_comments3.each do |h|%>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="/designer/blog?id=<%=h.id%>" ><img style="height: 60px; width: 60px;" src="/uploads/<%=h.image_path%>" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4><a href="/designer/blog?id=<%=h.id%>"><%=h.title%></a></h4>
+                                    <p><%= h.postedtime %></p>
+                                </div>
+                            </div>
+                            <%end%>
+                      
+                        </div>
+                        <div class="sidebar-item categories">
+                            <h3>导航</h3>
+                            <ul class="nav navbar-stacked">
+                                <li><a href="/designer/blog_list?type=ttxw">头条新闻<span class="pull-right"></span></a></li>
+                                <li class=""><a href="/designer/blog_list?type=qdkf"　>前端开发<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=zcgh">职场规划<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=cxydsj">程序猿的世界<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=sysj">摄影世界<span class="pull-right"></span></a></li>
+                                 <li><a href="/designer/blog_list?type=hysj">环游世界<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=zptj">作品推荐<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=tszt">图书专题<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=sjzt">设计专题<span class="pull-right"></span></a></li>
+
+                            </ul>
+                        </div>
+                        <div class="sidebar-item tag-cloud">
+                            <h3>标签</h3>
+                            <ul class="nav nav-pills">
+                                <li><a href="#">摄影</a></li>
+                                <li><a href="#">手绘</a></li>
+                                <li><a href="#">旅行</a></li>
+                                <li><a href="#">电影</a></li>
+                                <li><a href="#">读书</a></li>
+                                <li><a href="#">社会热点</a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-item popular">
+                            <h3>推荐</h3>
+                            <ul class="gallery">
+                                <% @article_comments6.each do |h|%>
+                                <li><a href="/designer/blog?id=<%=h.id%>" ><img style="height: 66px; width: 66px;" src="/uploads/<%=h.image_path%>" alt=""></a></li>
+                             
+                                <%end%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+
+
+
+                     <%  @article_list_table.each do |f|  %>
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog two-column">
+                                <div class="post-thumb">
+                                    <a href="blogdetails.html"><img src="/uploads/<%=f.image_path%>" alt="" class="img-responsive"></a>
+                                    <div class="post-overlay">
+                                        <span class="uppercase" style=""><a href="#" style="font-size: 15px;margin-top: 10px;"><%=f.postedtime%></a></span>
+                                    </div>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h1 class="post-title bold" ><a href="/designer/blog?id=<%=f.id%>" style="font-size: 20px;"><%=f.title%></a></h1>
+                                    <h3 class="post-author"><a href="#">Posted by <%=User.where(id: f.user_id.to_s)[0]['email']%></a></h3>
+                                    <p><%=f.subhead%></p>
+                                    <!-- <a href="#" class="read-more">View More</a> -->
+                                    <div class="post-bottom overflow">
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>
+                                          <!--   <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li> -->
+                                            <%@count_num_article=Articlecomment.where(article_id: f.id).length%>
+                                            <li><a href="#"><i class="fa fa-comments"></i><%=@count_num_article  %> Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <%end%>
+
+
+
+                 
+                    </div>
+                    <%= will_paginate @article_list_table, renderer: BootstrapPagination::Rails%>
+              <!--       <div class="blog-pagination">
+                        <ul class="pagination">
+                          <li><a href="#">left</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li class="active"><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">6</a></li>
+                          <li><a href="#">7</a></li>
+                          <li><a href="#">8</a></li>
+                          <li><a href="#">9</a></li>
+                          <li><a href="#">right</a></li>
+                        </ul>
+                    </div> -->
+                 </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/lightbox.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/wow.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/main.js"></script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%=render "footer"%>
+
+<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
+<script src="/index1949/js/jquery-2.2.0.min.js"></script>
+<script src="/index1949/js/bootstrap.min.js"></script>
+<script src="/index1949/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/index1949/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/index1949/vendors/instafeed/instafeed.min.js"></script>
+<script src="/index1949/vendors/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/index1949/vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="/index1949/vendors/flexslider/jquery.flexslider-min.js"></script>
+<script src="/index1949/js/theme.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

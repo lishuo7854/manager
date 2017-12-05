@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Home</title>
+
+
+<link rel="stylesheet" href="/index1949/css/bootstrap.min.css">
+<link rel="stylesheet" href="/index1949/css/font-awesome.min.css">
+<link rel="stylesheet" href="/index1949/vendors/owl-carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="/index1949/vendors/magnific-popup/magnific-popup.css">
+<link rel="stylesheet" type="text/css" href="/css/nav_style.css">
+
+<link href="/index1949/css/style.css" rel="stylesheet">
+<link href="/index1949/css/theme/green.css" rel="stylesheet">
+
+
+</head>
+<body class="home">
+
+<header class="row transparent black header1" data-spy="affix" data-offset-top="0" id="header">
+    <div class="container">
+        <div class="row top-header">
+            <div class="col-sm-4 search-form-col">
+                <form action="#" method="get" class="search-form">
+                    <div class="input-group">
+                        <span class="input-group-addon"><img src="/index1949/images/search-icon-white.png" alt=""></span>
+                        <input type="search" class="form-control" placeholder="search">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4 logo-col text-center">
+                <a href="index.html"><img src="/index1949/images/logo-white-green.png" alt=""></a>
+            </div>
+            <div class="col-sm-4 menu-trigger-col">
+                <button class="menu-trigger pull-right">
+                    <span class="active-page">home</span>
+                    <img src="/index1949/images/menu-align-white.png" alt="" class="icon-burger">
+                    <img src="/index1949/images/menu-close-white.png" alt="" class="icon-cross">
+                </button>
+            </div>
+        </div>        
+    </div>
+    <div class="row menu-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 menu-col">
+                    <div class="row">
+                          <ul class="nav column-menu white-bg">
+                           <li><a href="/designer/blog_list?type=ttxw">头条新闻<span class="pull-right"></span></a></li>
+                                <li class=""><a href="/designer/blog_list?type=qdkf"　>前端开发<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=zcgh">职场规划<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=cxydsj">程序猿的世界<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=sysj">摄影世界<span class="pull-right"></span></a></li>
+                              
+                        </ul>
+                        <ul class="nav column-menu white-bg">
+                             <li><a href="/designer/blog_list?type=zptj">作品推荐<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=tszt">图书专题<span class="pull-right"></span></a></li>
+                                 <li><a href="/designer/blog_list?type=hysj">环游世界<span class="pull-right"></span></a></li>
+                                <li><a href="/designer/blog_list?type=sjzt">设计专题<span class="pull-right"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+ <div class="col-md-4 sidebar">    
+   <aside class="row m0 widget-author widget">
+                    <div class="widget-author-inner row">
+                        <div class="author-avatar row"><a href="#"><img style="width: 120px; height: 120px;" src="/uploads/TIM图片20171204233824.png" alt="" class="img-circle"></a></div>
+                        <a href="#"><h2 class="author-name">
+                            <%if logged_in?%>
+                            <%=current_user.email%>
+                            <%else%>
+                            未登陆
+                            <%end%>   
+                            </h2></a>
+                        <!-- <h5 class="author-title">small title</h5> -->
+                        <p>种一棵树最好的时间是十年前，其次是现在。</p>
+                        <!-- <a href="#" class="know-more">注销账号</a> -->
+                        <%= link_to "注销账号", logout_path, method: :delete,:class=>"know-more" %>
+                    </div>
+                    <ul class="nav social-nav">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </aside>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+       <!--          <div class="col-sm-4 subscribe-col">
+                    <h5 class="widget-title">subscribe to our newsletter.</h5>
+                    <form action="#" method="post" class="form-inline subscribe-form">                    
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm"><span>send</span></button>
+                    </form>
+                    <ul class="nav social-nav dark">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="row featured-post-carousel">
+
+
+    <% @article_banner_index[0..4].each do |f|%>
+    <div class="item post">
+        <img src="/uploads/<%=f.image_path%>" alt="" class="img-responsive main-bg">
+        <div class="post-content">
+            <div class="container">
+                <h5 class="post-meta"><i>in</i> <a href="#"><%=f.category%></a> | <a href="#"><%=f.postedtime%></a></h5>
+                <h2 class="post-title"><a href="/designer/blog?id=<%=f.id%>"><%=f.title%></a></h2>
+                <a href=href="/designer/blog?id=<%=f.id%>" class="btn btn-primary"><span>read more</span></a>
+            </div>
+        </div>
+    </div>
+ <%end%>
+
+
+
+</section>
+
+<style type="text/css">
+    .ti{border-bottom: 1px #494949 solid;}
+</style>
+
+<section class="row content-wrap">
+    <!-- <div id="nav"> -->
+                    
+                    <div class="pros subpage" style="height: 410px;margin-top: 71px;width: 150px;text-align: center;">
+                        <!-- <h2>全部团购分类</h2> -->
+                        <ul class="prosul clearfix" id="proinfo" style="display: block;width: 100%;margin: 0px;">
+                            <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=ttxw">头条新闻</a>
+                               
+                                <!-- <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+                                 <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=qdkf">前端开发</a>
+                           
+                              <!--   <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+                                 <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=sjzt">设计专题</a>
+                            
+                                <!-- <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+                                 <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=zcgh">职场规划</a>
+                             
+                               <!--  <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+                                 <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=cxydsj">程序猿的世界</a>
+                            
+                               <!--  <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+                                 <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=sysj">摄影世界</a>
+                             
+                            
+                            </li>
+                              <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=hysj">环游世界</a>
+                             
+                            
+                            </li>
+
+                                    <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=zptj">作品推荐</a>
+                             <!-- 
+                                <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+
+                                    <li class="food">
+                               <a class="ti" href="/designer/blog_list?type=tszt">图书专题</a>
+                             
+                              <!--   <div class="prosmore hide">
+                                    <span><em><a href="#">全部(117)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+                                    <span><em><a href="#">西餐(9)</a></em></span>
+                                    <span><em><a href="#">海鲜(37)</a></em></span>
+                                    <span><em><a href="#">地方菜(5)</a></em></span>
+                                    <span><em><a href="#">日韩料理(2)</a></em></span>
+                                    <span><em><a href="#">快餐(2)</a></em></span>
+                                    <span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+                                    <span><em><a href="#">其他(7)</a></em></span>
+                                    <span><em><a href="#">下午茶(5)</a></em></span>
+                                    <span><em><a href="#">咖啡(8)</a></em></span>
+                                </div> -->
+                            </li>
+
+                     
+                        
+                        </ul>
+                    </div>
+                </div>
+    <div class="container">
+        <div class="row" id="post-masonry">
+            <% @article.each do |f|  %>
+            <article class="col-sm-4 post post-masonry post-format-image">
+                <div class="post-wrapper row">
+                    <div class="featured-content row">
+                        <a href=""><img src="/uploads/<%=f.image_path%>" alt="" class="img-responsive"></a>
+                    </div>
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date"><%=f.postedtime%></a>
+                            <span class="post-author"><i>by</i><a href="#"><%=f.inputer%></a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="/designer/blog?id=<%=f.id%>"><%=f.title%></a></h3>
+                        <p> <%=f.subhead%></p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#"><%=f.category%></a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+         <%end%>
+         <!--    <aside class="col-sm-4 widget-author widget widget-with-posts post">
+                <div class="widget-author-inner row">
+                    <div class="author-avatar row"><a href="#"><img src="/index1949/images/author.png" alt="" class="img-circle"></a></div>
+                    <a href="#"><h2 class="author-name">Mark Sanders</h2></a>
+                    <h5 class="author-title">small title</h5>
+                    <p>The word nature is derived from the Latin word natura, or "essential qualities, innate disposition", and in ancient times, literally meant "birth".</p>
+                    <a href="#" class="know-more">know more</a>
+                </div>
+                <ul class="nav social-nav">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </aside> -->
+
+
+
+
+
+
+
+            <!-- 轮播图 -->
+ <!--            <article class="col-sm-4 post post-masonry post-format-gallery">
+                <div class="post-wrapper row">
+                    <div class="featured-content row">
+                        <div class="gallery-of-post">
+                            <div class="item"><img src="/index1949/images/posts/masonry/3.jpg" alt=""></div>
+                            <div class="item"><img src="/index1949/images/posts/masonry/3.jpg" alt=""></div>
+                            <div class="item"><img src="/index1949/images/posts/masonry/3.jpg" alt=""></div>
+                            <div class="item"><img src="/index1949/images/posts/masonry/3.jpg" alt=""></div>
+                            <div class="item"><img src="/index1949/images/posts/masonry/3.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
+                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article> -->
+            
+          <!--   <article class="col-sm-4 post post-masonry post-format-text">
+                <div class="post-wrapper row">
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
+                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="col-sm-4 post post-masonry post-format-video">
+                <div class="post-wrapper row">
+                    <div class="featured-content row">
+                        <a href="single.html">
+                            <img src="/index1949/images/posts/masonry/4.jpg" alt="" class="img-responsive">
+                            <img src="/index1949/images/play-btn.png" alt="" class="video-mark">
+                        </a>
+                    </div>
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
+                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+           
+
+
+           
+            <aside class="col-sm-4 widget widget-twitter widget-with-posts post">
+                <div class="widget-twitter-inner">
+                    <h5 class="widget-meta"><i class="fa fa-twitter"></i>Twitter feed</h5>
+                    <div class="row tweet-texts">
+                        <p>Check out new post on my blog</p>
+                    </div>
+                    <div class="row timepast">1 day ago</div>
+                </div>
+            </aside>
+
+
+
+
+            
+            <article class="col-sm-4 post post-masonry post-format-quote">
+                <div class="post-wrapper row">
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title">If everybody learns this simple art of loving his work, whatever it is, enjoying it without asking for any recognition, we would have more beautiful and celebrating world.</h3>
+                        <h5 class="quote-maker"><a href="#">osho</a></h5>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">quote</a>, <a href="#">life</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-white.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+          
+            <article class="col-sm-4 post post-masonry post-format-link">
+                <div class="post-wrapper row">
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title"></h3>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">link</a>, <a href="#">product</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="col-sm-4 post post-masonry post-format-video">
+                <div class="post-wrapper row">
+                    <div class="featured-content row">
+                        <a href="single.html">
+                            <img src="/index1949/images/posts/masonry/4.jpg" alt="" class="img-responsive">
+                            <img src="/index1949/images/play-btn.png" alt="" class="video-mark">
+                        </a>
+                    </div>
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">feb 17, 2016</a>
+                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
+                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <div class="response-count"><img src="/index1949/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article> --> 
+            <!--Twitter Widget-->
+         <!--    <aside class="col-sm-4 widget widget-instagram widget-with-posts post">
+                <div class="widget-instagram-inner">
+                    <h5 class="widget-meta"><i class="fa fa-twitter"></i>instagram feed chivalricblog</h5>
+                    <div id="instafeed"></div>
+                </div>
+            </aside>  -->
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<%=render "footer"%>
+
+<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
+<script src="/index1949/js/jquery-2.2.0.min.js"></script>
+<script src="/index1949/js/bootstrap.min.js"></script>
+<script src="/index1949/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/index1949/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/index1949/vendors/instafeed/instafeed.min.js"></script>
+<script src="/index1949/vendors/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/index1949/vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="/index1949/js/theme.js"></script>
+
+
+
+
+    
+    <script type="text/javascript">
+
+ 
+
+
+
+        (function(){
+
+    $(window).resize(function (argument) {
+           if ($(window).width()>1568){
+                 $('.pros').fadeIn();
+
+           }
+           else if ($(window).width()<1568){
+                 $('.pros').fadeOut() 
+
+           }
+     })
+     if ($(window).width()>1568){
+                 $('.pros').fadeIn();
+
+           }
+           else if ($(window).width()<1568){
+                 $('.pros').fadeOut() 
+
+           }
+           
+
+            var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
+            
+            $head.click(function(e){
+                e.stopPropagation();
+                if(!inter){
+                    $ul.show();
+                }else{
+                    $ul.hide();
+                }
+                inter=!inter;
+            });
+            
+            $ul.click(function(event){
+                event.stopPropagation();
+            });
+            
+           
+
+            $lis.hover(function(){
+                if(!$(this).hasClass('nochild')){
+                    $(this).addClass("prosahover");
+                    $(this).find(".prosmore").removeClass('hide');
+                }
+            },function(){
+                if(!$(this).hasClass('nochild')){
+                    if($(this).hasClass("prosahover")){
+                        $(this).removeClass("prosahover");
+                    }
+                    $(this).find(".prosmore").addClass('hide');
+                }
+            });
+            
+        })();
+        </script>
+
+</body>
+
+
+
+</html>
